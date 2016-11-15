@@ -1,13 +1,13 @@
 package com.rosstox26.pathos.projectpathos;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 
-public class CreateAccount extends AppCompatActivity {
+public class Rewards extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_account);
+        setContentView(R.layout.activity_rewards2);
     }
 }

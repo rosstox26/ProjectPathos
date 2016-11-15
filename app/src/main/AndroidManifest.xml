@@ -16,12 +16,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".WelcomeScreen" />
-        <activity android:name=".CreateAccount" />
-        <activity android:name=".AccountSetup" />
         <activity android:name=".LoginScreen" />
-        <activity android:name=".Homepage" />
-        <activity android:name=".RedeemReward" />
-        <activity android:name=".EarnCoins"></activity>
+        <activity android:name=".EarnCoins" />
+        <activity android:name=".Rewards" />
+        <activity android:name=".AccountSetup" />
+        <activity android:name=".Goals"></activity>
     </application>
 
 </manifest>

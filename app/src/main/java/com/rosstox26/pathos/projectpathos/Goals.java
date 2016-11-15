@@ -1,13 +1,13 @@
 package com.rosstox26.pathos.projectpathos;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 
-public class RedeemReward extends AppCompatActivity {
+public class Goals extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_redeem_reward);
+        setContentView(R.layout.activity_goals);
     }
 }
