@@ -1,9 +1,9 @@
 package com.rosstox26.pathos.projectpathos;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 
-public class WelcomeScreen extends AppCompatActivity {
+public class WelcomeScreen extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
