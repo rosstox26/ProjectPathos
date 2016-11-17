@@ -3,11 +3,12 @@ package com.rosstox26.pathos.projectpathos;
 import android.app.Activity;
 import android.os.Bundle;
 
-public class Rewards extends Activity {
-
+public class RedeemRewards extends Activity {
+    //comment
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rewards2);
+        setContentView(R.layout.activity_redeem_rewards);
+
     }
 }

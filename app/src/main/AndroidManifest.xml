@@ -18,9 +18,10 @@
         <activity android:name=".WelcomeScreen" />
         <activity android:name=".LoginScreen" />
         <activity android:name=".EarnCoins" />
-        <activity android:name=".Rewards" />
         <activity android:name=".AccountSetup" />
-        <activity android:name=".Goals"></activity>
+        <activity android:name=".Goals" />
+        <activity android:name=".CreateAccount" />
+        <activity android:name=".RedeemRewards"></activity>
     </application>
 
 </manifest>

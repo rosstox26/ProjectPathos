@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 public class WelcomeScreen extends Activity {
-
+    //comment
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
