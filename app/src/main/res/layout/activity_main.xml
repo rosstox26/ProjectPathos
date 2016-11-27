@@ -16,12 +16,12 @@
         android:text="Hello World!"
         android:id="@+id/textView" />
 
-    <TextView
-        android:text="Test"
+    <Button
+        android:text="Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="118dp"
-        android:id="@+id/textView2" />
+        android:layout_marginTop="40dp"
+        android:id="@+id/button6" />
 </RelativeLayout>
