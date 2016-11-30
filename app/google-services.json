@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "703017416722",
+    "firebase_url": "https://projectpathos-d3345.firebaseio.com",
+    "project_id": "projectpathos-d3345",
+    "storage_bucket": "projectpathos-d3345.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:703017416722:android:f83b822d825c72ee",
+        "android_client_info": {
+          "package_name": "com.rosstox26.pathos.projectpathos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "703017416722-q5qhmt4d8hm35tq2ucuusmen3mkropch.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbV7ztx_0nVrK9qFnDdwZXPBqY1mU8KZs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

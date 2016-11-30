@@ -2,7 +2,6 @@ package com.rosstox26.pathos.projectpathos;
 
 import android.app.Activity;
 import android.os.Bundle;
-//import com.facebook.FacebookSdk;
 
 public class LoginScreen extends Activity {
     //comment

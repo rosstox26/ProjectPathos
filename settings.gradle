@@ -1,1 +1,1 @@
-include ':app', ':facebook' //included the ':facebook' part for the Facebook login functionality
+include ':app'

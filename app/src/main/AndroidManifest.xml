@@ -15,9 +15,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <uses-permission android:name="android.permission.INTERNET"/> <!--added this line as a part of the Facebook login functionality -->
-        <meta-data android:name="com.facebook.sdk.ApplicationID"
-            android:value="@string/facebook_app_id" /> <!--added this line as a part of the Facebook login functionality -->
         <activity android:name=".WelcomeScreen" />
         <activity android:name=".LoginScreen" />
         <activity android:name=".EarnCoins" />
