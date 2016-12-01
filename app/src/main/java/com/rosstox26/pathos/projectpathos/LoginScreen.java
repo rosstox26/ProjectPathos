@@ -64,6 +64,7 @@ public class LoginScreen extends Activity implements View.OnClickListener {
 
         if (view == buttonLogin) {
             //
+            signIn(email, password);
         } else if (view == buttonCreateUser) {
             //
             createAccount(email, password);
