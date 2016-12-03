@@ -10,4 +10,133 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.rosstox26.pathos.projectpathos.AccountSetup">
 
+    <TextView
+        android:text="Account Settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="12dp"
+        android:id="@+id/tvAccountSettings"
+        android:textSize="30sp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textAlignment="center" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="10"
+        android:id="@+id/etName"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/tvAccountSettings"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="55dp"
+        android:layout_marginStart="55dp" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rgGender"
+        android:layout_below="@+id/etName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="33dp">
+
+        <RadioButton
+            android:text="Female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/rbGender3"
+            android:layout_alignLeft="@+id/rbGender3"
+            android:layout_alignStart="@+id/rbGender3"
+            android:id="@+id/rbGender1"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/rbGender1"
+            android:layout_alignRight="@+id/rbGender1"
+            android:layout_alignEnd="@+id/rbGender1"
+            android:id="@+id/rbGender2"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rbGender3"
+            android:layout_weight="1"
+            android:layout_above="@+id/bSubmit"
+            android:layout_alignLeft="@+id/etEmail"
+            android:layout_alignStart="@+id/etEmail"
+            android:layout_marginBottom="86dp" />
+    </RadioGroup>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:layout_alignTop="@+id/rgGender"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="12dp"
+        android:layout_marginEnd="12dp"
+        android:id="@+id/etWeight"
+        android:text="Weight" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:layout_marginTop="12dp"
+        android:id="@+id/etHeight1"
+        android:layout_below="@+id/etWeight"
+        android:layout_alignLeft="@+id/etWeight"
+        android:layout_alignStart="@+id/etWeight"
+        android:text="Height (Ft.)" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/etHeight2"
+        android:text="Height (In.)"
+        android:layout_below="@+id/etHeight1"
+        android:layout_alignLeft="@+id/etHeight1"
+        android:layout_alignStart="@+id/etHeight1" />
+
+    <Button
+        android:text="Back to Main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bGoBack"
+        android:layout_alignBaseline="@+id/bSubmit"
+        android:layout_alignBottom="@+id/bSubmit"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp" />
+
+    <Button
+        android:text="Submit Changes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="52dp"
+        android:id="@+id/bSubmit"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/bGoBack"
+        android:layout_toEndOf="@+id/bGoBack"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp" />
+
 </RelativeLayout>
