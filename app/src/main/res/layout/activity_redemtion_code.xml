@@ -30,4 +30,14 @@
         android:textSize="36sp"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bRedemption"
+        android:layout_marginTop="71dp"
+        android:text="Cashier Click Here"
+        android:textSize="30sp"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

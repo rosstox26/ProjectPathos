@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_goals"
+    android:id="@+id/goals"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -11,11 +11,78 @@
     tools:context="com.rosstox26.pathos.projectpathos.Goals">
 
     <Button
-        android:text="Button"
+        android:text="100,000 Steps"
+        android:layout_width="120dp"
+        android:id="@+id/bGoal2"
+        android:background="@android:drawable/btn_star"
+        android:backgroundTint="@android:color/darker_gray"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_height="120dp" />
+
+    <TextView
+        android:text="Weekly Goals"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:id="@+id/Goals"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="30sp"
+        android:textColor="@android:color/holo_green_dark"
+        android:layout_above="@+id/bGoal1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="41dp"
-        android:id="@+id/button3" />
+        android:layout_alignParentTop="true" />
+
+    <Button
+        android:text="140,000 Steps"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/bGoal3"
+        android:background="@android:drawable/btn_star_big_on"
+        android:backgroundTint="@android:color/holo_orange_light"
+        android:layout_below="@+id/tvPoints2"
+        android:layout_alignLeft="@+id/tvPoints2"
+        android:layout_alignStart="@+id/tvPoints2" />
+
+    <TextView
+        android:text="150 points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvPoints2"
+        android:textSize="24sp"
+        android:layout_below="@+id/bGoal2"
+        android:layout_alignLeft="@+id/tvPoints3"
+        android:layout_alignStart="@+id/tvPoints3" />
+
+    <TextView
+        android:text="250 points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvPoints3"
+        android:textSize="24sp"
+        android:layout_below="@+id/bGoal3"
+        android:layout_alignRight="@+id/bGoal2"
+        android:layout_alignEnd="@+id/bGoal2" />
+
+    <Button
+        android:text="70,000 Steps "
+        android:layout_width="120dp"
+        android:id="@+id/bGoal1"
+        android:background="@android:drawable/btn_star"
+        android:backgroundTint="@android:color/holo_orange_dark"
+        android:elevation="0dp"
+        android:layout_height="120dp"
+        android:layout_alignBottom="@+id/textView9"
+        android:layout_alignLeft="@+id/textView9"
+        android:layout_alignStart="@+id/textView9"
+        android:layout_marginBottom="17dp" />
+
+    <TextView
+        android:text="100 points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView9"
+        android:textSize="24sp"
+        android:layout_above="@+id/bGoal2"
+        android:layout_alignLeft="@+id/bGoal2"
+        android:layout_alignStart="@+id/bGoal2" />
 </RelativeLayout>
