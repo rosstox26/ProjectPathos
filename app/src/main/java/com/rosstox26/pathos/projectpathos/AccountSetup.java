@@ -14,6 +14,12 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+/*
+User inputs their basic information including height, weight, gender, etc..
+This information will be added into a database recording user data.
+It can be updated by accessing account settings from the menu.
+ */
+
 public class AccountSetup extends Activity implements View.OnClickListener {
 
     //firebase
@@ -59,9 +65,11 @@ public class AccountSetup extends Activity implements View.OnClickListener {
         mAuth = FirebaseAuth.getInstance();
 
 
-        //I want to be able to know who the current user is, but I do not
-        //actually want these toasts
-        //Not sure if the toasts or the whole code in general can be removed...
+        /*
+        I want to be able to know who the current user is, but I do not
+        actually want these toasts
+        Not sure if the toasts or the whole code in general can be removed...
+        */
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -91,7 +99,7 @@ public class AccountSetup extends Activity implements View.OnClickListener {
 
         } else if (View == bGoBack){
             //Return to Welcome Screen
-            Intent intentHome = new Intent(this, WelcomeScreen.class);
+            Intent intentHome = new Intent(this, Homepage.class);
             startActivity(intentHome);
         }
     }
