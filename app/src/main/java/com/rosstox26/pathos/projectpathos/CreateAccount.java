@@ -70,19 +70,6 @@ public class CreateAccount extends Activity implements View.OnClickListener {
         };
 
     }
-    @Override
-    public void onClick(View view) {
-        String email = editTextCreateAccountEmail.getText().toString();
-        String password = editTextCreateAccountPassword.getText().toString();
-        String weight = editTextCreateAccountWeight.getText().toString();
-        String heightFt = editTextCreateAccountHeightFt.getText().toString();
-        String heightIn = editTextCreateAccountHeightIn.getText().toString();
-
-        if (view == buttonCreateAccount) {
-            createAccount(email, password);
-            userProfile(email, password, weight, heightFt, heightIn);
-        }
-    }
 
     @Override
     public void onStart() {
@@ -97,6 +84,22 @@ public class CreateAccount extends Activity implements View.OnClickListener {
             mAuth.removeAuthStateListener(mAuthListener);
         }
     }
+
+    @Override
+    public void onClick(View view) {
+        String email = editTextCreateAccountEmail.getText().toString();
+        String password = editTextCreateAccountPassword.getText().toString();
+        String weight = editTextCreateAccountWeight.getText().toString();
+        String heightFt = editTextCreateAccountHeightFt.getText().toString();
+        String heightIn = editTextCreateAccountHeightIn.getText().toString();
+
+        if (view == buttonCreateAccount) {
+            createAccount(email, password);
+            userProfile(email, password, weight, heightFt, heightIn);
+        }
+    }
+
+
     public void createAccount(String email, String password) {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
