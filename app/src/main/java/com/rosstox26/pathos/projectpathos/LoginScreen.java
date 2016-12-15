@@ -39,8 +39,6 @@ public class LoginScreen extends Activity implements View.OnClickListener {
         buttonLogin.setOnClickListener(this);
         buttonCreateUser.setOnClickListener(this);
 
-        mAuth = FirebaseAuth.getInstance();
-
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
