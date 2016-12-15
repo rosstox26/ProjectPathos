@@ -32,17 +32,6 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true" />
 
-    <Button
-        android:text="140,000 Steps"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:id="@+id/bGoal3"
-        android:background="@android:drawable/btn_star_big_on"
-        android:backgroundTint="@android:color/holo_orange_light"
-        android:layout_below="@+id/tvPoints2"
-        android:layout_alignLeft="@+id/tvPoints2"
-        android:layout_alignStart="@+id/tvPoints2" />
-
     <TextView
         android:text="150 points"
         android:layout_width="wrap_content"
@@ -85,4 +74,15 @@
         android:layout_above="@+id/bGoal2"
         android:layout_alignLeft="@+id/bGoal2"
         android:layout_alignStart="@+id/bGoal2" />
+
+    <Button
+        android:text="140,000 Steps"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/bGoal3"
+        android:background="@android:drawable/btn_star_big_on"
+        android:backgroundTint="@android:color/holo_orange_light"
+        android:layout_below="@+id/tvPoints2"
+        android:layout_alignRight="@+id/tvPoints2"
+        android:layout_alignEnd="@+id/tvPoints2" />
 </RelativeLayout>
