@@ -15,14 +15,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "703017416722-3kv95s4k5fa39k6t5drj2dtoeudgere7.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.rosstox26.pathos.projectpathos",
-            "certificate_hash": "8F8EAE5E5D3933B038DB581323DF5645968E0AC5"
-          }
-        },
-        {
           "client_id": "703017416722-q5qhmt4d8hm35tq2ucuusmen3mkropch.apps.googleusercontent.com",
           "client_type": 3
         }
