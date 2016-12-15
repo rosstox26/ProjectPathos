@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/editText3"
+        android:id="@+id/editTextCreateAccountEmail"
         android:layout_alignBaseline="@+id/textViewEmailLabel"
         android:layout_alignBottom="@+id/textViewEmailLabel"
         android:layout_alignParentRight="true"
@@ -53,17 +53,17 @@
         android:inputType="textPassword"
         android:ems="10"
         android:layout_marginTop="17dp"
-        android:id="@+id/editText4"
-        android:layout_below="@+id/editText3"
-        android:layout_alignLeft="@+id/editText3"
-        android:layout_alignStart="@+id/editText3" />
+        android:id="@+id/editTextCreateAccountPassword"
+        android:layout_below="@+id/editTextCreateAccountEmail"
+        android:layout_alignLeft="@+id/editTextCreateAccountEmail"
+        android:layout_alignStart="@+id/editTextCreateAccountEmail" />
 
     <TextView
         android:text="Password:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textViewPasswordLabel"
-        android:layout_alignBottom="@+id/editText4"
+        android:layout_alignBottom="@+id/editTextCreateAccountPassword"
         android:layout_alignLeft="@+id/textViewEmailLabel"
         android:layout_alignStart="@+id/textViewEmailLabel" />
 
@@ -71,7 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/radioButtonMale"
-        android:layout_below="@+id/editText4"
+        android:layout_below="@+id/editTextCreateAccountPassword"
         android:layout_toRightOf="@+id/textViewPasswordLabel"
         android:layout_toEndOf="@+id/textViewPasswordLabel"
         android:layout_marginLeft="13dp"
@@ -92,9 +92,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textViewOtherLabel"
-        android:layout_below="@+id/radioButton3"
-        android:layout_alignLeft="@+id/radioButton3"
-        android:layout_alignStart="@+id/radioButton3" />
+        android:layout_below="@+id/radioButtonOther"
+        android:layout_alignLeft="@+id/radioButtonOther"
+        android:layout_alignStart="@+id/radioButtonOther" />
 
     <TextView
         android:text="Female"
@@ -115,7 +115,7 @@
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/radioButton3"
+        android:id="@+id/radioButtonOther"
         android:layout_marginRight="24dp"
         android:layout_marginEnd="24dp"
         android:layout_above="@+id/textViewFemaleLabel"
