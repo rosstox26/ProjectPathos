@@ -66,8 +66,10 @@ public class LoginScreen extends Activity implements View.OnClickListener {
         if (view == buttonLogin) {
             signIn(email, password);
         } else if (view == buttonCreateUser) {
-            createAccount(email, password);
-            signIn(email, password);
+            Intent intentCreateUser = new Intent(LoginScreen.this, CreateAccount.class);
+            startActivity(intentCreateUser);
+            //createAccount(email, password);
+            //signIn(email, password);
         }
     }
 
