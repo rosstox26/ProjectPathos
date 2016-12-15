@@ -1,6 +1,7 @@
 package com.rosstox26.pathos.projectpathos;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
@@ -46,7 +47,7 @@ public class LoginScreen extends Activity implements View.OnClickListener {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     // User is signed in
-                    Toast.makeText(LoginScreen.this, "User logged in" + user.getEmail(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginScreen.this, "User logged in " + user.getEmail(), Toast.LENGTH_SHORT).show();
                 } else {
                     // User is signed out
                     Toast.makeText(LoginScreen.this, "Nobody is logged in", Toast.LENGTH_SHORT).show();
@@ -63,11 +64,10 @@ public class LoginScreen extends Activity implements View.OnClickListener {
         String password = editTextPassword.getText().toString();
 
         if (view == buttonLogin) {
-            //
             signIn(email, password);
         } else if (view == buttonCreateUser) {
-            //
             createAccount(email, password);
+            signIn(email, password);
         }
     }
 
@@ -117,6 +117,9 @@ public class LoginScreen extends Activity implements View.OnClickListener {
                         if (!task.isSuccessful()) {
                             //Log.w(TAG, "signInWithEmail", task.getException());
                             Toast.makeText(LoginScreen.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Intent intent = new Intent(LoginScreen.this, MainActivity.class);
+                            startActivity(intent);
                         }
 
                         // ...
