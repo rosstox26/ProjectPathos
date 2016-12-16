@@ -3,11 +3,10 @@ package com.rosstox26.pathos.projectpathos;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
@@ -96,6 +95,8 @@ public class CreateAccount extends Activity implements View.OnClickListener {
         if (view == buttonCreateAccount) {
             createAccount(email, password);
             userProfile(email, password, weight, heightFt, heightIn);
+            Intent Home = new Intent(CreateAccount.this, MainActivity.class);
+            startActivity(Home);
         }
     }
 
