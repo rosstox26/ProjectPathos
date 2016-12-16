@@ -59,6 +59,7 @@ public class RedeemRewards extends Activity {
 
         }
 
+
         @Override
         public boolean onOptionsItemSelected(MenuItem item) {
             Intent intentHome = new Intent(RedeemRewards.this, MainActivity.class);
