@@ -94,7 +94,7 @@ public class CreateAccount extends Activity implements View.OnClickListener {
         if (view == buttonCreateAccount) {
             createAccount(email, password);
             userProfile(email, password, weight, heightFt, heightIn);
-         
+
 
         }
     }
