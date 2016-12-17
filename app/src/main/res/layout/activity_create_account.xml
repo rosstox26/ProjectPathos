@@ -47,17 +47,6 @@
         android:layout_marginRight="28dp"
         android:layout_marginEnd="28dp" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:layout_marginTop="17dp"
-        android:id="@+id/editTextCreateAccountPassword"
-        android:layout_below="@+id/editTextCreateAccountEmail"
-        android:layout_alignLeft="@+id/editTextCreateAccountEmail"
-        android:layout_alignStart="@+id/editTextCreateAccountEmail" />
-
     <TextView
         android:text="Password:"
         android:layout_width="wrap_content"
@@ -67,96 +56,6 @@
         android:layout_alignLeft="@+id/textViewEmailLabel"
         android:layout_alignStart="@+id/textViewEmailLabel" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/radioButtonMale"
-        android:layout_below="@+id/editTextCreateAccountPassword"
-        android:layout_toRightOf="@+id/textViewPasswordLabel"
-        android:layout_toEndOf="@+id/textViewPasswordLabel"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="39dp" />
-
-    <TextView
-        android:text="Male"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textViewMaleLabel"
-        android:layout_below="@+id/radioButtonMale"
-        android:layout_alignRight="@+id/radioButtonMale"
-        android:layout_alignEnd="@+id/radioButtonMale" />
-
-    <TextView
-        android:text="Other"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textViewOtherLabel"
-        android:layout_below="@+id/radioButtonOther"
-        android:layout_alignLeft="@+id/radioButtonOther"
-        android:layout_alignStart="@+id/radioButtonOther" />
-
-    <TextView
-        android:text="Female"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textViewFemaleLabel"
-        android:layout_below="@+id/radioButtonFemale"
-        android:layout_centerHorizontal="true" />
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/radioButtonFemale"
-        android:layout_alignBaseline="@+id/radioButtonMale"
-        android:layout_alignBottom="@+id/radioButtonMale"
-        android:layout_centerHorizontal="true" />
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/radioButtonOther"
-        android:layout_marginRight="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_above="@+id/textViewFemaleLabel"
-        android:layout_alignRight="@+id/textViewCreateAccount"
-        android:layout_alignEnd="@+id/textViewCreateAccount" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Weight (lbs)"
-        android:ems="10"
-        android:layout_below="@+id/textViewMaleLabel"
-        android:layout_toRightOf="@+id/textViewEmailLabel"
-        android:layout_toEndOf="@+id/textViewEmailLabel"
-        android:layout_marginTop="26dp"
-        android:id="@+id/editTextCreateAccountWeight" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Height (ft)"
-        android:ems="10"
-        android:id="@+id/editTextCreateAccountHeightFt"
-        android:layout_below="@+id/editTextCreateAccountWeight"
-        android:layout_alignRight="@+id/textViewCreateAccount"
-        android:layout_alignEnd="@+id/textViewCreateAccount"
-        android:layout_marginTop="11dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Height (in)"
-        android:ems="10"
-        android:layout_below="@+id/editTextCreateAccountHeightFt"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp"
-        android:id="@+id/editTextCreateAccountHeightIn" />
-
     <Button
         android:text="Create Account"
         android:layout_width="wrap_content"
@@ -164,5 +63,90 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/buttonCreateAccount" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/editTextCreateAccountPassword"
+        android:layout_below="@+id/editTextCreateAccountEmail"
+        android:layout_alignLeft="@+id/editTextCreateAccountEmail"
+        android:layout_alignStart="@+id/editTextCreateAccountEmail" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewPasswordLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RadioButton
+            android:layout_width="168dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButtonMale"
+            android:text="Male"
+            android:layout_below="@+id/textViewPasswordLabel"
+            android:layout_marginTop="20dp"
+            android:layout_alignLeft="@+id/textViewPasswordLabel"
+            android:layout_alignStart="@+id/textViewPasswordLabel"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:layout_width="178dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButtonFemale"
+            android:text="Female"
+            android:layout_below="@+id/radioButtonMale"
+            android:layout_alignLeft="@+id/radioButtonMale"
+            android:layout_alignStart="@+id/radioButtonMale"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:layout_width="172dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButtonOther"
+            android:text="Other"
+            android:layout_below="@+id/radioButtonFemale"
+            android:layout_alignRight="@+id/radioButtonMale"
+            android:layout_alignEnd="@+id/radioButtonMale"
+            android:layout_alignLeft="@+id/radioButtonFemale"
+            android:layout_alignStart="@+id/radioButtonFemale"
+            android:layout_weight="1" />
+    </RadioGroup>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editTextCreateAccountHeightFt"
+        android:hint="Height (ft)"
+        android:layout_above="@+id/editTextCreateAccountHeightIn"
+        android:layout_alignLeft="@+id/textViewPasswordLabel"
+        android:layout_alignStart="@+id/textViewPasswordLabel" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editTextCreateAccountWeight"
+        android:hint="Weight (lbs)"
+        android:layout_marginBottom="42dp"
+        android:layout_above="@+id/buttonCreateAccount"
+        android:layout_alignLeft="@+id/editTextCreateAccountHeightIn"
+        android:layout_alignStart="@+id/editTextCreateAccountHeightIn" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editTextCreateAccountHeightIn"
+        android:hint="Height (in)"
+        android:layout_above="@+id/editTextCreateAccountWeight"
+        android:layout_alignLeft="@+id/editTextCreateAccountHeightFt"
+        android:layout_alignStart="@+id/editTextCreateAccountHeightFt" />
 
 </RelativeLayout>

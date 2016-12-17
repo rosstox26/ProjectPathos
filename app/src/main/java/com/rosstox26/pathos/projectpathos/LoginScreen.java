@@ -88,6 +88,7 @@ public class LoginScreen extends Activity implements View.OnClickListener {
             mAuth.removeAuthStateListener(mAuthListener);
         }
     }
+
     public void createAccount(String email, String password) {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -125,7 +126,6 @@ public class LoginScreen extends Activity implements View.OnClickListener {
                             Intent intent = new Intent(LoginScreen.this, Goals.class);
                             startActivity(intent);
                         }
-
                         // ...
                     }
                 });

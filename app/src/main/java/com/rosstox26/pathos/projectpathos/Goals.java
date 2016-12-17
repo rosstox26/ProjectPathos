@@ -6,19 +6,36 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
-public class Goals extends Activity {
-    //comment
+public class Goals extends Activity implements View.OnClickListener {
+    //buttons
+    private Button buttonBronze;
+    private Button buttonSilver;
+    private Button buttonGold;
+    //firebase
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_goals);
+
+        buttonBronze = (Button) findViewById(R.id.buttonBronze);
+        buttonBronze.setOnClickListener(this);
+        buttonSilver = (Button) findViewById(R.id.buttonSilver);
+        buttonSilver.setOnClickListener(this);
+        buttonGold = (Button) findViewById(R.id.buttonGold);
+        buttonGold.setOnClickListener(this);
+
         setContentView(R.layout.activity_goals);
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -51,13 +68,12 @@ public class Goals extends Activity {
             }
         }
 
+        //Menu
         @Override
         public boolean onCreateOptionsMenu(Menu menu) {
             getMenuInflater().inflate(R.menu.menu, menu);
             return super.onCreateOptionsMenu(menu);
-
         }
-
         @Override
         public boolean onOptionsItemSelected(MenuItem item) {
             Intent intentHome = new Intent(Goals.this, MainActivity.class);
@@ -86,7 +102,46 @@ public class Goals extends Activity {
                     startActivity(intentLogout);
                 }
             }
-
             return super.onOptionsItemSelected(item);
         }
+
+    @Override
+    public void onClick(View view) {
+        Intent toHome = new Intent(Goals.this, MainActivity.class);
+        if (view == buttonBronze){
+            String email =  mAuth.getCurrentUser().getEmail();
+            String goalLVL = "bronze";
+            int goalPTS = 100;
+            int goalSTPS = 70000;
+            userGoals(email, goalLVL, goalPTS, goalSTPS);
+            startActivity(toHome);
+
+        } else if (view == buttonSilver){
+            String email =  mAuth.getCurrentUser().getEmail();
+            String goalLVL = "silver";
+            int goalPTS = 150;
+            int goalSTPS = 100000;
+            userGoals(email, goalLVL, goalPTS, goalSTPS);
+            startActivity(toHome);
+
+        } else if (view == buttonGold){
+            String email =  mAuth.getCurrentUser().getEmail();
+            String goalLVL = "bronze";
+            int goalPTS = 250;
+            int goalSTPS = 14000;
+            userGoals(email, goalLVL, goalPTS, goalSTPS);
+            startActivity(toHome);
+
+        }
+    }
+
+    public void userGoals(String email, String goalLevel, int goalPoints, int goalSteps) {
+        ActivityDataDB activity = new ActivityDataDB(email, goalLevel, goalPoints, goalSteps);
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference dataGoals = database.getReference("userActivity");
+        DatabaseReference dataNewGoals = dataGoals.push();
+        dataNewGoals.setValue(activity);
+    }
 }
+
