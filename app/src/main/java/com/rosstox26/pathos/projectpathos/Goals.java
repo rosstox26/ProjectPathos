@@ -29,18 +29,13 @@ public class Goals extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_goals);
 
-        buttonBronze = (Button)
-
-
-
-
+        buttonBronze = (Button) findViewById(R.id.buttonBronze);
         buttonBronze.setOnClickListener(this);
         buttonSilver = (Button) findViewById(R.id.buttonSilver);
         buttonSilver.setOnClickListener(this);
-        buttonGold = (Button) findViewById(R.id.buttonGold);
+        buttonGold = (Button) findViewById(R.id.buttonBronze);
         buttonGold.setOnClickListener(this);
 
-        setContentView(R.layout.activity_goals);
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override

@@ -1,9 +1,9 @@
 {
   "project_info": {
     "project_number": "915704087687",
-    "firebase_url": "https://projectpathos-d3345.firebaseio.com",
-    "project_id": "projectpathos-d3345",
-    "storage_bucket": "projectpathos-d3345.appspot.com"
+    "firebase_url": "https://projectpathos-a9ed4.firebaseio.com",
+    "project_id": "projectpathos-a9ed4",
+    "storage_bucket": "projectpathos-a9ed4.appspot.com"
   },
   "client": [
     {
@@ -15,13 +15,29 @@
       },
       "oauth_client": [
         {
-          "client_id": "915704087687-q5qhmt4d8hm35tq2ucuusmen3mkropch.apps.googleusercontent.com",
+          "client_id": "915704087687-ebqi3d7q8ssioopk5qfsqpo7ffg6md3m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rosstox26.pathos.projectpathos",
+            "certificate_hash": "A786ABA58A524D98BABC01A2FFDCECB9369E1890"
+          }
+        },
+        {
+          "client_id": "915704087687-2h6s3tuof8t7164r17d346pcsvelsdcn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rosstox26.pathos.projectpathos",
+            "certificate_hash": "8F8EAE5E5D3933B038DB581323DF5645968E0AC5"
+          }
+        },
+        {
+          "client_id": "915704087687-d56ps4kfglvrqjddlv6geh8gei7thq01.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCbV7ztx_0nVrK9qFnDdwZXPBqY1mU8KZs"
+          "current_key": "AIzaSyBGbtikC12nybY3SPfQOt45KP8QdYEnnZ0"
         }
       ],
       "services": {
@@ -32,7 +48,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "915704087687-q5qhmt4d8hm35tq2ucuusmen3mkropch.apps.googleusercontent.com",
+              "client_id": "915704087687-d56ps4kfglvrqjddlv6geh8gei7thq01.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

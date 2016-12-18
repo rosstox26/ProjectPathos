@@ -94,7 +94,7 @@ public class AccountSetup extends Activity implements View.OnClickListener {
 
         } else if (View == bGoBack){
             //Return to Welcome Screen
-            Intent intentHome = new Intent(this, Homepage.class);
+            Intent intentHome = new Intent(this, MainActivity.class);
             startActivity(intentHome);
         }
     }

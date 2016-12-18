@@ -106,7 +106,7 @@ public class RedeemRewards extends Activity implements View.OnClickListener {
         Intent toRedemption= new Intent(RedeemRewards.this, RedemtionCode.class);
         if (view == buttonReward) {
             String email = mAuth.getCurrentUser().getEmail();
-            startActivity(toRedemtion);
+            startActivity(toRedemption);
         }
 
         }

@@ -1,22 +1,34 @@
 package com.rosstox26.pathos.projectpathos;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements View.OnClickListener {
 
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+
+    private Button buttonUpdateSteps;
+    private TextView textViewSteps;
+    private String steps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +51,11 @@ public class MainActivity extends Activity {
                 }
             }
         };
+
+        buttonUpdateSteps = (Button) findViewById(R.id.buttonUpdateSteps);
+        textViewSteps = (TextView) findViewById(R.id.textViewSteps);
+
+        buttonUpdateSteps.setOnClickListener(this);
     }
 
     @Override
@@ -91,5 +108,51 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v == buttonUpdateSteps) {
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
+            alertDialog.setTitle("STEPS");
+            alertDialog.setMessage("Enter today's step total from your fitness tracker or android device");
+
+            final EditText input = new EditText(MainActivity.this);
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.MATCH_PARENT);
+            input.setLayoutParams(lp);
+            alertDialog.setView(input);
+
+            alertDialog.setPositiveButton("Enter",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+
+                            String email = "aaa";
+                            steps = input.getText().toString();
+                            String date = "12-18-2016";
+
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference dataDailySteps = database.getReference();
+                            DatabaseReference dataNewDailySteps = dataDailySteps.child(email).child(date).push();
+
+
+
+                            DailySteps dailySteps = new DailySteps(email, date, steps);
+                            dataNewDailySteps.setValue(dailySteps);
+
+                            textViewSteps.setText(dailySteps.steps);
+                        }
+                    });
+
+            alertDialog.setNegativeButton("Cancel",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+
+            alertDialog.show();
+        }
     }
 }
