@@ -33,7 +33,7 @@ public class Goals extends Activity implements View.OnClickListener {
         buttonBronze.setOnClickListener(this);
         buttonSilver = (Button) findViewById(R.id.buttonSilver);
         buttonSilver.setOnClickListener(this);
-        buttonGold = (Button) findViewById(R.id.buttonBronze);
+        buttonGold = (Button) findViewById(R.id.buttonGold);
         buttonGold.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();

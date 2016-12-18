@@ -69,7 +69,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         buttonRedeemReward.setOnClickListener(this);
 
         Intent pastIntent = getIntent();
-        goalSTPS = pastIntent.getIntExtra("goalSTPS", 7500);
+        goalSTPS = pastIntent.getIntExtra("goalSTPS", goalSTPS);
         textViewDailySteps.setText("Daily Goal: " + String.valueOf(goalSTPS) + " steps");
 
 
