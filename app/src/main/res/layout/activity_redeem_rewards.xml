@@ -36,4 +36,13 @@
         android:layout_alignParentStart="true"
         android:layout_marginLeft="42dp"
         android:layout_marginStart="42dp" />
+
+    <TextView
+        android:text="Requires 1 Bronze Star (100 pts)"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        android:id="@+id/textViewRequirement"
+        android:textSize="24sp"
+        android:layout_below="@+id/buttonReward" />
 </RelativeLayout>
