@@ -1,11 +1,12 @@
 package com.rosstox26.pathos.projectpathos;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AlertDialog;
+
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -44,7 +45,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     // User is signed in
-                    Toast.makeText(MainActivity.this, "User Logged In." + user.getEmail(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "User Logged In " + user.getEmail(), Toast.LENGTH_SHORT).show();
                 } else {
                     // User is signed out
                     Toast.makeText(MainActivity.this, "Nobody Logged In.", Toast.LENGTH_SHORT).show();
@@ -128,9 +129,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
 
-                            String email = "aaa";
+                            //String email = "aaa";
                             steps = input.getText().toString();
-                            String date = "12-18-2016";
+                            /*String date = "12-18-2016";
 
                             FirebaseDatabase database = FirebaseDatabase.getInstance();
                             DatabaseReference dataDailySteps = database.getReference();
@@ -139,9 +140,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
 
                             DailySteps dailySteps = new DailySteps(email, date, steps);
-                            dataNewDailySteps.setValue(dailySteps);
+                            dataNewDailySteps.setValue(dailySteps);*/
 
-                            textViewSteps.setText(dailySteps.steps);
+                            textViewSteps.setText(steps);
                         }
                     });
 
