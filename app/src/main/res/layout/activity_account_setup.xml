@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="Email"
         android:ems="10"
         android:id="@+id/etName"
         android:layout_marginTop="15dp"
@@ -39,47 +39,6 @@
         android:layout_alignParentStart="true"
         android:layout_marginLeft="55dp"
         android:layout_marginStart="55dp" />
-
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/rgGender"
-        android:layout_below="@+id/etName"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="33dp">
-
-        <RadioButton
-            android:text="Female"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/rbGender3"
-            android:layout_alignLeft="@+id/rbGender3"
-            android:layout_alignStart="@+id/rbGender3"
-            android:id="@+id/rbGender1"
-            android:layout_weight="1" />
-
-        <RadioButton
-            android:text="Male"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/rbGender1"
-            android:layout_alignRight="@+id/rbGender1"
-            android:layout_alignEnd="@+id/rbGender1"
-            android:id="@+id/rbGender2"
-            android:layout_weight="1" />
-
-        <RadioButton
-            android:text="Other"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/rbGender3"
-            android:layout_weight="1"
-            android:layout_above="@+id/bSubmit"
-            android:layout_alignLeft="@+id/etEmail"
-            android:layout_alignStart="@+id/etEmail"
-            android:layout_marginBottom="86dp" />
-    </RadioGroup>
 
     <EditText
         android:layout_width="wrap_content"
@@ -122,23 +81,69 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/bGoBack"
-        android:layout_alignBaseline="@+id/bSubmit"
-        android:layout_alignBottom="@+id/bSubmit"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="32dp"
-        android:layout_marginStart="32dp" />
+        android:layout_below="@+id/bSubmit"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:text="Submit Changes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="52dp"
         android:id="@+id/bSubmit"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/bGoBack"
-        android:layout_toEndOf="@+id/bGoBack"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp" />
+        android:layout_marginTop="19dp"
+        android:layout_below="@+id/rgGender"
+        android:layout_centerHorizontal="true" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rgGender"
+        android:layout_marginTop="75dp"
+        android:layout_below="@+id/etName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RadioButton
+            android:text="Female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/rbGender3"
+            android:layout_alignLeft="@+id/rbGender3"
+            android:layout_alignStart="@+id/rbGender3"
+            android:id="@+id/rbGender1"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/rbGender1"
+            android:layout_alignRight="@+id/rbGender1"
+            android:layout_alignEnd="@+id/rbGender1"
+            android:id="@+id/rbGender2"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rbGender3"
+            android:layout_weight="1"
+            android:layout_above="@+id/bSubmit"
+            android:layout_alignLeft="@+id/etEmail"
+            android:layout_alignStart="@+id/etEmail"
+            android:layout_marginBottom="86dp" />
+    </RadioGroup>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Password"
+        android:ems="10"
+        android:id="@+id/etPassword"
+        android:layout_above="@+id/etWeight"
+        android:layout_alignLeft="@+id/etName"
+        android:layout_alignStart="@+id/etName"
+        android:layout_marginBottom="18dp" />
 
 </RelativeLayout>

@@ -28,8 +28,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private FirebaseAuth.AuthStateListener mAuthListener;
 
     private Button buttonUpdateSteps;
+    private Button buttonRedeemReward;
     private TextView textViewSteps;
+    private TextView textViewDailySteps;
+    private TextView textViewPoints;
     private String steps;
+    private int goalSTPS;
+    private int numericSteps;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,9 +60,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
         };
 
         buttonUpdateSteps = (Button) findViewById(R.id.buttonUpdateSteps);
+        buttonRedeemReward = (Button) findViewById(R.id.buttonRedeemReward);
         textViewSteps = (TextView) findViewById(R.id.textViewSteps);
+        textViewDailySteps = (TextView) findViewById(R.id.textViewDailySteps);
+        textViewPoints = (TextView) findViewById(R.id.textViewPoints);
 
         buttonUpdateSteps.setOnClickListener(this);
+        buttonRedeemReward.setOnClickListener(this);
+
+        Intent pastIntent = getIntent();
+        goalSTPS = pastIntent.getIntExtra("goalSTPS", 7500);
+        textViewDailySteps.setText("Daily Goal: " + String.valueOf(goalSTPS) + " steps");
+
+
     }
 
     @Override
@@ -131,6 +147,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
                             //String email = "aaa";
                             steps = input.getText().toString();
+                            numericSteps = Integer.parseInt(steps);
                             /*String date = "12-18-2016";
 
                             FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -143,6 +160,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                             dataNewDailySteps.setValue(dailySteps);*/
 
                             textViewSteps.setText(steps);
+                            textViewPoints.setText(steps + " points");
                         }
                     });
 
@@ -154,6 +172,16 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     });
 
             alertDialog.show();
+        }
+        else if(v == buttonRedeemReward) {
+
+            if(numericSteps < goalSTPS) {
+                Toast.makeText(MainActivity.this, "Not enough steps for reward", Toast.LENGTH_SHORT).show();
+            }
+            else if(numericSteps >= goalSTPS) {
+                Intent intent = new Intent(MainActivity.this, RedeemRewards.class);
+                startActivity(intent);
+            }
         }
     }
 }
