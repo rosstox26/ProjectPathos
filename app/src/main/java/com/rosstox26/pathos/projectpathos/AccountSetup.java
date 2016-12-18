@@ -4,11 +4,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -63,13 +65,6 @@ public class AccountSetup extends Activity implements View.OnClickListener {
         bSumbit.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
-
-
-        /*
-        I want to be able to know who the current user is, but I do not
-        actually want these toasts
-        Not sure if the toasts or the whole code in general can be removed...
-        */
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -102,5 +97,58 @@ public class AccountSetup extends Activity implements View.OnClickListener {
             Intent intentHome = new Intent(this, Homepage.class);
             startActivity(intentHome);
         }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intentHome = new Intent(AccountSetup.this, MainActivity.class);
+        Intent intentRewards = new Intent(AccountSetup.this, RedeemRewards.class);
+        Intent intentGoals = new Intent(AccountSetup.this, Goals.class);
+        Intent intentAccount = new Intent(AccountSetup.this, AccountSetup.class);
+        Intent intentLogout = new Intent(AccountSetup.this, LoginScreen.class);
+
+        if (mAuth.getCurrentUser() != null) {
+
+            if (item.getItemId() == R.id.menuRewards) {
+                startActivity(intentRewards);
+
+            } else if (item.getItemId() == R.id.menuGoals) {
+                startActivity(intentGoals);
+
+            } else if (item.getItemId() == R.id.menuAccount) {
+                //Essentially refreshes page
+                startActivity(intentAccount);
+
+            } else if(item.getItemId() == R.id.menuHome){
+                startActivity(intentHome);
+
+            } else if (item.getItemId() == R.id.menuLogout){
+                mAuth.signOut();
+                startActivity(intentLogout);
+            }
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

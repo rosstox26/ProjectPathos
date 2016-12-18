@@ -18,12 +18,14 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginScreen extends Activity implements View.OnClickListener {
     //comment
-    private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
+
     private EditText editTextEmailAddress;
     private EditText editTextPassword;
     private Button buttonLogin;
     private Button buttonCreateUser;
+
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
 
 
     @Override
@@ -38,6 +40,8 @@ public class LoginScreen extends Activity implements View.OnClickListener {
 
         buttonLogin.setOnClickListener(this);
         buttonCreateUser.setOnClickListener(this);
+
+        mAuth = FirebaseAuth.getInstance();
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -84,6 +88,7 @@ public class LoginScreen extends Activity implements View.OnClickListener {
             mAuth.removeAuthStateListener(mAuthListener);
         }
     }
+
     public void createAccount(String email, String password) {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -118,10 +123,9 @@ public class LoginScreen extends Activity implements View.OnClickListener {
                             //Log.w(TAG, "signInWithEmail", task.getException());
                             Toast.makeText(LoginScreen.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
                         } else {
-                            Intent intent = new Intent(LoginScreen.this, MainActivity.class);
+                            Intent intent = new Intent(LoginScreen.this, Goals.class);
                             startActivity(intent);
                         }
-
                         // ...
                     }
                 });

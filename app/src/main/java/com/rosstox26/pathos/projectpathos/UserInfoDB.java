@@ -11,9 +11,11 @@ public class UserInfoDB {
     String heightFt;
     String heightIn;
 
+    //empty constructor
     public UserInfoDB() {
-
     }
+
+    //user information constructor
     public UserInfoDB(String email, String password, String weight, String heightFt, String heightIn) {
         this.email = email;
         this.password = password;
@@ -21,4 +23,5 @@ public class UserInfoDB {
         this.heightFt = heightFt;
         this.heightIn = heightIn;
     }
+
 }
