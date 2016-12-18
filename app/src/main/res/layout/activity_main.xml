@@ -66,14 +66,6 @@
         android:layout_alignStart="@+id/textViewPoints"
         android:text="0 Steps" />
 
-    <Button
-        android:text="Update Steps"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/buttonUpdateSteps" />
-
     <ProgressBar
         style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
         android:layout_width="match_parent"
@@ -88,6 +80,34 @@
         android:layout_alignParentStart="true" />
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textViewSteps"
+        android:textSize="18sp" />
+
+    <Button
+        android:text="Update Steps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonUpdateSteps"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/textViewWeeklyGoal"
+        android:layout_alignEnd="@+id/textViewWeeklyGoal"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Redeem Reward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonRedeemReward"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/textViewSteps"
+        android:layout_toEndOf="@+id/textViewSteps" />
+
+    <TextView
         android:text="Steps Completed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -95,15 +115,8 @@
         android:fontFamily="sans-serif"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        android:layout_below="@+id/weeklyprogressBar"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/textViewSteps" />
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/textViewSteps"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

@@ -28,8 +28,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private FirebaseAuth.AuthStateListener mAuthListener;
 
     private Button buttonUpdateSteps;
+    private Button buttonRedeemReward;
     private TextView textViewSteps;
     private String steps;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,9 +56,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
         };
 
         buttonUpdateSteps = (Button) findViewById(R.id.buttonUpdateSteps);
+        buttonRedeemReward = (Button) findViewById(R.id.buttonRedeemReward);
         textViewSteps = (TextView) findViewById(R.id.textViewSteps);
 
         buttonUpdateSteps.setOnClickListener(this);
+        buttonRedeemReward.setOnClickListener(this);
     }
 
     @Override
@@ -154,6 +158,16 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     });
 
             alertDialog.show();
+        }
+        else if(v == buttonRedeemReward) {
+            int numericSteps = Integer.parseInt(steps);
+            if(numericSteps < 7500) {
+                Toast.makeText(MainActivity.this, "Not enough steps for reward", Toast.LENGTH_SHORT).show();
+            }
+            else if(numericSteps >= 7500) {
+                Intent intent = new Intent(MainActivity.this, RedeemRewards.class);
+                startActivity(intent);
+            }
         }
     }
 }
