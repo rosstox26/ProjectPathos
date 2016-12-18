@@ -1,9 +1,13 @@
 package com.rosstox26.pathos.projectpathos;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.text.format.DateFormat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,6 +18,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Date;
 
 public class Goals extends Activity implements View.OnClickListener {
     //buttons
@@ -43,7 +49,7 @@ public class Goals extends Activity implements View.OnClickListener {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     // User is signed in
-                    Toast.makeText(Goals.this, "User logged in" + user.getEmail(), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(Goals.this, "User logged in" + user.getEmail(), Toast.LENGTH_SHORT).show();
                 } else {
                     // User is signed out
                     Toast.makeText(Goals.this, "Nobody is logged in", Toast.LENGTH_SHORT).show();
@@ -106,39 +112,108 @@ public class Goals extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        //SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        //Calendar c = Calendar.getInstance();
+        //String timeNow = df.format(c.getTime());
         Intent toHome = new Intent(Goals.this, MainActivity.class);
-        if (view == buttonBronze){
-            String email =  mAuth.getCurrentUser().getEmail();
-            String goalLVL = "bronze";
-            int goalPTS = 100;
-            int goalSTPS = 70000;
-            userGoals(email, goalLVL, goalPTS, goalSTPS);
-            startActivity(toHome);
 
-        } else if (view == buttonSilver){
-            String email =  mAuth.getCurrentUser().getEmail();
-            String goalLVL = "silver";
-            int goalPTS = 150;
-            int goalSTPS = 100000;
-            userGoals(email, goalLVL, goalPTS, goalSTPS);
-            startActivity(toHome);
+        Context context = null;
+        String dateString = DateFormat.format("MM/dd/yyyy", new Date((new Date()).getTime())).toString();
+        SharedPreferences sp = context.getSharedPreferences("<your-app-id>", Context.MODE_PRIVATE);
+        Editor editor = sp.edit();
+        editor.putString("<your-datetime-label>", dateString);
+        editor.commit();
 
-        } else if (view == buttonGold){
-            String email =  mAuth.getCurrentUser().getEmail();
-            String goalLVL = "bronze";
-            int goalPTS = 250;
-            int goalSTPS = 14000;
-            userGoals(email, goalLVL, goalPTS, goalSTPS);
-            startActivity(toHome);
+        sp = context.getSharedPreferences("<your-app-id>", Context.MODE_PRIVATE);
+        String savedDateTime = sp.getString("<your-datetime-label>", "");
+            if (view == buttonBronze) {
+               if ("".equals(savedDateTime)) {
+                   //no previous datetime was saved, allow button click
+                   String email = mAuth.getCurrentUser().getEmail();
+                   String goalLVL = "bronze";
+                   int goalPTS = 100;
+                   int goalSTPS = 70000;
+                   userGoals(email, goalLVL, goalPTS, goalSTPS);
+                   startActivity(toHome);
 
-        }
+               } else {
+                   String dateStringNow = DateFormat.format("MM/dd/yyyy", new Date((new Date()).getTime())).toString();
+                   if (savedDateTime.equals(dateStringNow)) {
+                       //Same date, disable button
+                       buttonBronze.setEnabled(false);
+                       Toast.makeText(this, "Wait until tomorrow to set a new goal.", Toast.LENGTH_SHORT).show();
+                   } else {
+                       //different date, allow button click
+                       String email = mAuth.getCurrentUser().getEmail();
+                       String goalLVL = "bronze";
+                       int goalPTS = 100;
+                       int goalSTPS = 70000;
+                       userGoals(email, goalLVL, goalPTS, goalSTPS);
+                       startActivity(toHome);
+                   }
+               }
+
+            } else if (view == buttonSilver) {
+                if ("".equals(savedDateTime)) {
+                    //no previous datetime was saved, allow button click
+                    String email = mAuth.getCurrentUser().getEmail();
+                    String goalLVL = "silver";
+                    int goalPTS = 150;
+                    int goalSTPS = 100000;
+                    userGoals(email, goalLVL, goalPTS, goalSTPS);
+                    startActivity(toHome);
+
+                } else {
+                    String dateStringNow = DateFormat.format("MM/dd/yyyy", new Date((new Date()).getTime())).toString();
+                    if (savedDateTime.equals(dateStringNow)) {
+                        //Same date, disable button
+                        buttonBronze.setEnabled(false);
+                        Toast.makeText(this, "Wait until tomorrow to set a new goal.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        //different date, allow button click
+                        String email = mAuth.getCurrentUser().getEmail();
+                        String goalLVL = "silver";
+                        int goalPTS = 150;
+                        int goalSTPS = 100000;
+                        userGoals(email, goalLVL, goalPTS, goalSTPS);
+                        startActivity(toHome);
+                    }
+                }
+
+            } else if (view == buttonGold) {
+                if ("".equals(savedDateTime)) {
+                    //no previous datetime was saved, allow button click
+                    String email = mAuth.getCurrentUser().getEmail();
+                    String goalLVL = "gold";
+                    int goalPTS = 250;
+                    int goalSTPS = 140000;
+                    userGoals(email, goalLVL, goalPTS, goalSTPS);
+                    startActivity(toHome);
+
+                } else {
+                    String dateStringNow = DateFormat.format("MM/dd/yyyy", new Date((new Date()).getTime())).toString();
+                    if (savedDateTime.equals(dateStringNow)) {
+                        //Same date, disable button
+                        buttonBronze.setEnabled(false);
+                        Toast.makeText(this, "Wait until tomorrow to set a new goal.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        //different date, allow button click
+                        String email = mAuth.getCurrentUser().getEmail();
+                        String goalLVL = "gold";
+                        int goalPTS = 250;
+                        int goalSTPS = 140000;
+                        userGoals(email, goalLVL, goalPTS, goalSTPS);
+                        startActivity(toHome);
+                    }
+                }
+            }
     }
 
     public void userGoals(String email, String goalLevel, int goalPoints, int goalSteps) {
         ActivityDataDB activity = new ActivityDataDB(email, goalLevel, goalPoints, goalSteps);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference dataGoals = database.getReference("userActivity");
+        DatabaseReference dataGoals = database.getReference("weeklyGoal");
         DatabaseReference dataNewGoals = dataGoals.push();
         dataNewGoals.setValue(activity);
     }

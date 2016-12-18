@@ -10,6 +10,7 @@ public class ActivityDataDB {
     int goalPoints;
     int goalSteps;
     int stepsReported;
+    //String currentTime;
 
     ActivityDataDB(){}
 
@@ -18,10 +19,12 @@ public class ActivityDataDB {
         this.goalLevel = goalLevel;
         this.goalPoints = goalPoints;
         this.goalSteps = goalSteps;
+        //this.currentTime = currentTime;
     }
 
-    ActivityDataDB(String email, int stepsReported){
+    ActivityDataDB(String email, int stepsReported, String currentTime){
         this.stepsReported = stepsReported;
+        //this.currentTime = currentTime;
     }
 
 }
