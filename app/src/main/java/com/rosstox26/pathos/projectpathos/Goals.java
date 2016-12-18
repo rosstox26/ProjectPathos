@@ -15,6 +15,11 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+/*
+A user selects a daily goal to work toward. The goal values are passed both into the Firebase
+Database and through an intent to the home page for the purposes of the prototype's functionality.
+ */
+
 public class Goals extends Activity implements View.OnClickListener {
     //buttons
     private Button buttonBronze;
@@ -133,7 +138,6 @@ public class Goals extends Activity implements View.OnClickListener {
             userGoals(email, goalLVL, goalPTS, goalSTPS);
             toHome.putExtra("goalSTPS", goalSTPS);
             startActivity(toHome);
-
         }
     }
 

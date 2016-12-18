@@ -13,6 +13,12 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+/*
+A user can redeem their reward given the redemption code that populates.
+Once redeemed the reward is gone, as it has been used and the user is taken
+back to the homepage.
+ */
+
 public class RedemtionCode extends Activity  implements View.OnClickListener {
     //Added in menu to this page. No other java yet.
     private Button buttonRedemption;

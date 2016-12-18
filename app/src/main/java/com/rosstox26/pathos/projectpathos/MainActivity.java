@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,9 +17,10 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
+/*
+The main activity is where a user can report their daily step count, check their progress toward
+their goals, and attempt to redeem awards.
+ */
 public class MainActivity extends Activity implements View.OnClickListener {
 
 
@@ -35,6 +35,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private String steps;
     private int goalSTPS;
     private int numericSteps;
+
 
 
     @Override
@@ -68,11 +69,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
         buttonUpdateSteps.setOnClickListener(this);
         buttonRedeemReward.setOnClickListener(this);
 
+        //Goal steps are updated to reflect the goal option selected
         Intent pastIntent = getIntent();
         goalSTPS = pastIntent.getIntExtra("goalSTPS", goalSTPS);
         textViewDailySteps.setText("Daily Goal: " + String.valueOf(goalSTPS) + " steps");
-
-
     }
 
     @Override
@@ -129,6 +129,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+       //A user self reports their stepcount from an activity tracker through dialog box
         if(v == buttonUpdateSteps) {
             AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
             alertDialog.setTitle("STEPS");
@@ -173,6 +174,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
             alertDialog.show();
         }
+        //user redeems rewards, if earned
         else if(v == buttonRedeemReward) {
 
             if(numericSteps < goalSTPS) {

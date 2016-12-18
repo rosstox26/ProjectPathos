@@ -13,6 +13,12 @@ import android.widget.Button;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+/*
+User sees their available rewards. Ideally this page would populate any earned rewards.
+On this product only one reward can be earned from the daily goal, demonstrating
+the base process of the app.
+*/
+
 public class RedeemRewards extends Activity implements View.OnClickListener {
 
     private Button buttonReward;
@@ -97,7 +103,6 @@ public class RedeemRewards extends Activity implements View.OnClickListener {
                     startActivity(intentLogout);
                 }
             }
-
             return super.onOptionsItemSelected(item);
         }
 
@@ -108,6 +113,5 @@ public class RedeemRewards extends Activity implements View.OnClickListener {
             String email = mAuth.getCurrentUser().getEmail();
             startActivity(toRedemption);
         }
-
-        }
+    }
 }

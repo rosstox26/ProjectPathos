@@ -18,8 +18,9 @@ import com.google.firebase.auth.FirebaseUser;
 
 /*
 User inputs their basic information including height, weight, gender, etc..
-This information will be added into a database recording user data.
-It can be updated by accessing account settings from the menu.
+In later versions, if updating firebase functionality is put in place,
+User can update their account information through this page. They access
+this page through the navigation menu.
  */
 
 public class AccountSetup extends Activity implements View.OnClickListener {

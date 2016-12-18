@@ -16,8 +16,12 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 //import com.google.firebase.auth.api.model.StringList;
 
+/*
+After a user Logs in they are brought to the goals page to select a daily goal.
+If the user is not yet registered, they click Sign Up and are redirected to a create
+account page to set up their information.
+ */
 public class LoginScreen extends Activity implements View.OnClickListener {
-    //comment
 
     private EditText editTextEmailAddress;
     private EditText editTextPassword;

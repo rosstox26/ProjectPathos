@@ -3,11 +3,10 @@ package com.rosstox26.pathos.projectpathos;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
@@ -19,6 +18,11 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 //import com.google.firebase.auth.api.model.StringList;
+
+/* A user is taken to this page when they select sign up.
+This ensures we receive the user's basic information before they begin using the app.
+All of their information is stored under user within the firebase database.
+ */
 
 public class CreateAccount extends Activity implements View.OnClickListener {
 

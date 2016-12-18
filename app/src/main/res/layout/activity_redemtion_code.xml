@@ -11,14 +11,13 @@
     tools:context="com.rosstox26.pathos.projectpathos.RedemtionCode">
 
     <TextView
-        android:text="TextView"
+        android:text="Display code at register to get 50% off your smoothie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="46dp"
-        tools:text="Display code at register to get 50% off your smoothie"
         android:textSize="24sp" />
 
     <TextView
