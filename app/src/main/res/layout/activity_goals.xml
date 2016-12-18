@@ -13,7 +13,7 @@
     <Button
         android:text="100,000 Steps"
         android:layout_width="120dp"
-        android:id="@+id/bGoal2"
+        android:id="@+id/buttonSilver"
         android:background="@android:drawable/btn_star"
         android:backgroundTint="@android:color/darker_gray"
         android:layout_centerVertical="true"
@@ -28,7 +28,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="30sp"
         android:textColor="@android:color/holo_green_dark"
-        android:layout_above="@+id/bGoal1"
+        android:layout_above="@+id/buttonGold"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true" />
 
@@ -36,7 +36,7 @@
         android:text="140,000 Steps"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:id="@+id/bGoal3"
+        android:id="@+id/buttonGold"
         android:background="@android:drawable/btn_star_big_on"
         android:backgroundTint="@android:color/holo_orange_light"
         android:layout_below="@+id/tvPoints2"
@@ -49,24 +49,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/tvPoints2"
         android:textSize="24sp"
-        android:layout_below="@+id/bGoal2"
+        android:layout_below="@+id/buttonSilver"
         android:layout_alignLeft="@+id/tvPoints3"
         android:layout_alignStart="@+id/tvPoints3" />
-
-    <TextView
-        android:text="250 points"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvPoints3"
-        android:textSize="24sp"
-        android:layout_below="@+id/bGoal3"
-        android:layout_alignRight="@+id/bGoal2"
-        android:layout_alignEnd="@+id/bGoal2" />
 
     <Button
         android:text="70,000 Steps "
         android:layout_width="120dp"
-        android:id="@+id/bGoal1"
+        android:id="@+id/buttonGold"
         android:background="@android:drawable/btn_star"
         android:backgroundTint="@android:color/holo_orange_dark"
         android:elevation="0dp"
@@ -82,7 +72,17 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView9"
         android:textSize="24sp"
-        android:layout_above="@+id/bGoal2"
-        android:layout_alignLeft="@+id/bGoal2"
-        android:layout_alignStart="@+id/bGoal2" />
+        android:layout_above="@+id/buttonSilver"
+        android:layout_alignLeft="@+id/buttonSilver"
+        android:layout_alignStart="@+id/buttonSilver" />
+
+    <TextView
+        android:text="250 points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvPoints3"
+        android:textSize="24sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/buttonSilver"
+        android:layout_alignStart="@+id/buttonSilver" />
 </RelativeLayout>

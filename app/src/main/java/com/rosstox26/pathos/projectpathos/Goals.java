@@ -29,7 +29,11 @@ public class Goals extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_goals);
 
-        buttonBronze = (Button) findViewById(R.id.buttonBronze);
+        buttonBronze = (Button)
+
+
+
+
         buttonBronze.setOnClickListener(this);
         buttonSilver = (Button) findViewById(R.id.buttonSilver);
         buttonSilver.setOnClickListener(this);
