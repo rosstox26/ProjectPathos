@@ -33,7 +33,7 @@
         android:layout_alignParentTop="true" />
 
     <Button
-        android:text="15,00 Steps"
+        android:text="15,000 Steps"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:id="@+id/buttonBronze"
@@ -59,7 +59,6 @@
         android:id="@+id/buttonBronze"
         android:background="@android:drawable/btn_star"
         android:backgroundTint="@android:color/holo_orange_dark"
-        android:elevation="0dp"
         android:layout_height="120dp"
         android:layout_alignBottom="@+id/textView9"
         android:layout_alignLeft="@+id/textView9"

@@ -111,24 +111,27 @@ public class Goals extends Activity implements View.OnClickListener {
             String email =  mAuth.getCurrentUser().getEmail();
             String goalLVL = "bronze";
             int goalPTS = 100;
-            int goalSTPS = 70000;
+            int goalSTPS = 7500;
             userGoals(email, goalLVL, goalPTS, goalSTPS);
+            toHome.putExtra("goalSTPS", goalSTPS);
             startActivity(toHome);
 
         } else if (view == buttonSilver){
             String email =  mAuth.getCurrentUser().getEmail();
             String goalLVL = "silver";
             int goalPTS = 150;
-            int goalSTPS = 100000;
+            int goalSTPS = 10000;
             userGoals(email, goalLVL, goalPTS, goalSTPS);
+            toHome.putExtra("goalSTPS", goalSTPS);
             startActivity(toHome);
 
         } else if (view == buttonGold){
             String email =  mAuth.getCurrentUser().getEmail();
-            String goalLVL = "bronze";
+            String goalLVL = "gold";
             int goalPTS = 250;
-            int goalSTPS = 14000;
+            int goalSTPS = 15000;
             userGoals(email, goalLVL, goalPTS, goalSTPS);
+            toHome.putExtra("goalSTPS", goalSTPS);
             startActivity(toHome);
 
         }

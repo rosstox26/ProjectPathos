@@ -43,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="54dp"
-        android:id="@+id/textViewWeeklyGoal"
+        android:id="@+id/textViewDailySteps"
         android:layout_below="@+id/imageView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -54,18 +54,6 @@
         android:textColor="@android:color/black"
         android:textStyle="normal|bold" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/weeklyprogressBar"
-        android:id="@+id/textViewWeeklySteps"
-        android:fontFamily="sans-serif"
-        android:textSize="24sp"
-        android:textColor="@android:color/black"
-        android:layout_alignLeft="@+id/textViewPoints"
-        android:layout_alignStart="@+id/textViewPoints"
-        android:text="0 Steps" />
-
     <ProgressBar
         style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
         android:layout_width="match_parent"
@@ -75,7 +63,7 @@
         android:visibility="visible"
         tools:visibility="visible"
         android:progressDrawable="@android:color/holo_green_dark"
-        android:layout_below="@+id/textViewWeeklyGoal"
+        android:layout_below="@+id/textViewDailySteps"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -89,14 +77,14 @@
 
     <Button
         android:text="Update Steps"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/buttonUpdateSteps"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/textViewWeeklyGoal"
-        android:layout_alignEnd="@+id/textViewWeeklyGoal"
+        android:layout_alignRight="@+id/textViewDailySteps"
+        android:layout_alignEnd="@+id/textViewDailySteps"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_width="wrap_content" />
 
     <Button
         android:text="Redeem Reward"
