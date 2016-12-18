@@ -37,7 +37,7 @@ public class RedeemRewards extends Activity implements View.OnClickListener {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     // User is signed in
-                    Toast.makeText(RedeemRewards.this, "User logged in" + user.getEmail(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RedeemRewards.this, "User logged in " + user.getEmail(), Toast.LENGTH_SHORT).show();
                 } else {
                     // User is signed out
                     Toast.makeText(RedeemRewards.this, "Nobody is logged in", Toast.LENGTH_SHORT).show();
