@@ -34,7 +34,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/bRedemption"
+        android:id="@+id/buttonRedemption"
         android:layout_marginTop="71dp"
         android:text="Cashier Click Here"
         android:textSize="30sp"

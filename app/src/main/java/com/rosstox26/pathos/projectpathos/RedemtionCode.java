@@ -6,14 +6,15 @@ import android.app.Activity;
 import android.support.annotation.NonNull;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class RedemtionCode extends Activity {
-   //Added in menu to this page. No other java yet.
-
+    //Added in menu to this page. No other java yet.
+    private Button buttonRedemption;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
@@ -21,6 +22,9 @@ public class RedemtionCode extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_redemtion_code);
+
+        buttonRedemption(Button) findViewById(R.id.buttonRedemption);
+        button.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -38,6 +42,7 @@ public class RedemtionCode extends Activity {
             }
         };
     }
+
     @Override
     public void onStart() {
         super.onStart();
@@ -78,10 +83,10 @@ public class RedemtionCode extends Activity {
             } else if (item.getItemId() == R.id.menuAccount) {
                 startActivity(intentAccount);
 
-            } else if(item.getItemId() == R.id.menuHome){
+            } else if (item.getItemId() == R.id.menuHome) {
                 startActivity(intentHome);
 
-            } else if (item.getItemId() == R.id.menuLogout){
+            } else if (item.getItemId() == R.id.menuLogout) {
                 mAuth.signOut();
                 startActivity(intentLogout);
             }
@@ -90,4 +95,13 @@ public class RedemtionCode extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onClick(View view) {
+        Intent toHome = new Intent(RedemtionCode.this, MainActivity.class);
+        if (view == buttonRedemption) {
+            String email = mAuth.getCurrentUser().getEmail();
+            startActivity(toHome);
+        }
+
+    }
 }

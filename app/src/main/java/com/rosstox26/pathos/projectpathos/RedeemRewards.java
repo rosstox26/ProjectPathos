@@ -103,7 +103,7 @@ public class RedeemRewards extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        Intent toRedemtion= new Intent(Goals.this, RedemtionCode.class);{
+        Intent toRedemption= new Intent(RedeemRewards.this, RedemtionCode.class);
         if (view == buttonReward) {
             String email = mAuth.getCurrentUser().getEmail();
             startActivity(toRedemtion);
